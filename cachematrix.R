@@ -5,6 +5,10 @@
 makeCacheMatrix <- function(x = matrix()) {
         
         i<-NULL
+          set<- function(y){
+                 i<<- NULL
+                 x<<- y
+                }
         ## get function is to obtain a matrix from argument x
         get<-function() x
         ## setinverse function is store the inverse matrix in cache
@@ -12,7 +16,7 @@ makeCacheMatrix <- function(x = matrix()) {
         ## getinverse is to obtain inverse matrix 
         getinverse<- function() i
         ##Return a list
-        list(get=get, 
+        list(set=set, get=get, 
              setinverse=setinverse, getinverse=getinverse)
         
 }
